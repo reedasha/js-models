@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { Templates } from '../Templates/template.entity'
 
 @Entity()
 export class Message {
@@ -14,4 +15,6 @@ export class Message {
   @Column('text')
   attachment: string;
 
+  @ManyToOne(type => Templates, template => template.messages)
+    template : Templates;
 }

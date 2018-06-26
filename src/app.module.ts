@@ -15,9 +15,15 @@ import { AppController } from 'app.controller';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
+<<<<<<< HEAD
       username: 'Mukhamed',
       password: 'Muhamed210698',
       database: 'Muhamed',
+=======
+      username: 'root',
+      password: 'root',
+      database: 'test',
+>>>>>>> 5b765aeb26cc4ad6e4ba2303e222cab7096c683d
       entities: [__dirname + '/../**/*.entity{.ts,.js}'],
       synchronize: true,
     }),

@@ -10,6 +10,6 @@ export class AppController {
     let rabbitMqConnection = amqp.createConnection({ host: 'localhost' });
     rabbitMqConnection.on('ready')
    return this.appService.root();
-}
+  }
 
 }

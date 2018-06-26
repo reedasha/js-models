@@ -1,7 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
+
 import { TemplateModule } from './Templates/template.module'
+import { Message } from './Message/message.module'
+import { Recepient } from './Recepient/recepient.module'
+
 import { AppController } from 'app.controller';
 
 @Module({
@@ -11,9 +15,9 @@ import { AppController } from 'app.controller';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'root',
+      username: 'admin',
       password: 'root',
-      database: 'test',
+      database: 'postgres',
       entities: [__dirname + '/../**/*.entity{.ts,.js}'],
       synchronize: true,
     }),

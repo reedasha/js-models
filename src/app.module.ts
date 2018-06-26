@@ -3,14 +3,14 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 
 import { TemplateModule } from './Templates/template.module'
-import { Message } from './Message/message.module'
-import { Recepient } from './Recepient/recepient.module'
-
-import { AppController } from 'app.controller';
+import { MessageModule } from './Message/message.module'
+import { RecepientModule } from './Recepient/recepient.module'
 
 @Module({
   imports: [
     TemplateModule,
+    MessageModule,
+    RecepientModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
@@ -22,6 +22,7 @@ import { AppController } from 'app.controller';
       synchronize: true,
     }),
   ]
+
 })
 export class AppModule {
   constructor(private readonly connection: Connection) {}

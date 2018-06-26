@@ -19,8 +19,8 @@
   "dependencies": {
     "@nestjs/common": "^5.0.0",
     "@nestjs/core": "^5.0.0",
+    "@nestjs/microservices": "^5.0.1",
     "@nestjs/typeorm": "^5.0.0",
-    "@nestjs/microservices": "*",
     "amqplib": "^0.5.2",
     "fastify-formbody": "^2.0.0",
     "pg": "^7.4.3",

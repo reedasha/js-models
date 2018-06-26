@@ -6,7 +6,7 @@ import { MessageController } from './message.controller';
 import { Message } from './message.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Photo])],
+  imports: [TypeOrmModule.forFeature([Message])],
   providers: [MessageService],
   controllers: [MessageController],
 })

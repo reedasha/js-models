@@ -3,8 +3,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 
 import { TemplateModule } from './Templates/template.module'
-import { Message } from './Message/message.module'
-import { Recepient } from './Recepient/recepient.module'
+import { MessageModule } from './Message/message.module'
+import { RecepientModule } from './Recepient/recepient.module'
 import { EventModule } from './Event/event.module';
 import { AppController } from 'app.controller';
 
@@ -13,14 +13,14 @@ import { AppController } from 'app.controller';
     TemplateModule,
     MessageModule,
     RecepientModule,
-    EventModule
+    EventModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'admin',
+      username: 'root',
       password: 'root',
-      database: 'postgres',
+      database: 'test',
       entities: [__dirname + '/../**/*.entity{.ts,.js}'],
       synchronize: true,
     }),

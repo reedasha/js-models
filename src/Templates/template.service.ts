@@ -41,5 +41,5 @@ export class TemplateService {
     } catch (e) {
         console.log(e)
     }
-}
+    }
 }

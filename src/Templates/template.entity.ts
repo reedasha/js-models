@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Message } from '../Message/message.entity'
 
 @Entity()
 export class Templates {
@@ -13,4 +14,7 @@ export class Templates {
 
   @Column()
   attachment: string;
+
+  @OneToMany(type => Message, message => message.template) // note: we will create author property in the Photo class below
+  messages: Message[];
 } 

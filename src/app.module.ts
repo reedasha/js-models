@@ -10,7 +10,7 @@ import { AppController } from 'app.controller';
 
 @Module({
   imports: [
-    TemplateModule, EventModule,
+    TemplateModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',

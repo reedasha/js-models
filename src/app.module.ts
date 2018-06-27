@@ -7,6 +7,7 @@ import { MessageModule } from './Message/message.module'
 import { RecepientModule } from './Recepient/recepient.module'
 import { EventModule } from './Event/event.module';
 import { AppController } from 'app.controller';
+const config = require('../config');
 
 @Module({
   imports: [
@@ -15,20 +16,14 @@ import { AppController } from 'app.controller';
     RecepientModule,
     EventModule,
     TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-<<<<<<< HEAD
-      username: 'Mukhamed',
-      password: 'Muhamed210698',
-      database: 'Muhamed',
-=======
-      username: 'root',
-      password: 'root',
-      database: 'test',
->>>>>>> a4ffae0f7a62745ef8694b0b15601b5e295f4607
-      entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-      synchronize: true,
+      type: config.type,
+      host: config.host,
+      port: config.port,
+      username: config.username,
+      password: config.password,
+      database: config.database,
+      entities: config.entities,
+      synchronize: config.synchronize
     }),
   ]
 
@@ -36,3 +31,4 @@ import { AppController } from 'app.controller';
 export class AppModule {
   constructor(private readonly connection: Connection) {}
 }
+
